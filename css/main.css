@@ -435,6 +435,19 @@ a:hover {
 /*!
 2. Components
 ================*/
+
+/*
+Grid Temoin
+================*/
+/*.temoin-grid-container {
+	display: grid;
+	grid-template-columns: auto auto auto;
+}*/
+
+.temoin-grid-item img {
+	max-height: 200px;
+}
+/*==*/
 .accordion__body {
 	overflow: hidden;
 	padding: 70px 0;
