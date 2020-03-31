@@ -24,7 +24,7 @@ Table of Contents:
 	/* 1. Windows on Load
 	====================*/
 	$(window).on('load', function() {
-		$('.loader').delay(2500).fadeOut('slow');
+		//$('.loader').delay(3000).fadeOut('slow');
 		var $grid = $('.grid').masonry({
 			itemSelector: '.grid-item',
 			percentPosition: true,
@@ -51,13 +51,14 @@ Table of Contents:
 	====================*/
 	function mycallback(){
 		this.el.classList.add('finish');
+		setTimeout(showPage, 1500);
 	}
 	Vivus.prototype.myremoveclass = function () {
 		this.el.classList.remove('finish');
 	}
 	var loaderSvg = new Vivus('my-svg', {
-		type: 'sync',
-		duration: 100,
+		type: 'oneByOne',
+		duration: 80,
 		file: 'img/loader.svg',
 		start: 'autostart',
 		dashGap: 20,

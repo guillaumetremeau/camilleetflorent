@@ -22,6 +22,16 @@
 		<![endif]-->
 	</head>
 <body data-spy="scroll" data-target="#navbarSupportedContent" data-offset="100">
+	<script>
+		var myVar;
+		function loadPage() {
+			myVar = setTimeout(showPage, 5000);
+		}
+		function showPage() {
+			$('#loader').fadeOut('slow', console.log('fadeOut'));
+		}
+		loadPage();
+	</script>
 	<nav id="navbar" class="navbar navbar-expand-lg fixed-top p-0 text-white">
 		<div class="d-lg-flex w-100 align-items-start">
 			<a class="navbar-brand text-primary" href="#">
@@ -87,7 +97,8 @@
 		<div class="c-hero-banner c-hero-banner--main">
 			<div class="cover"></div>
 			<div class="c-hero-banner__section c-hero-banner__image">
-				<img class="lazyload" src="img/banner.jpg" alt="image">
+				<img class="lazyload banner" src="img/banner.jpg" alt="image">
+				<img class="lazyload bannerPhone" src="img/slider/gallery-6.jpg" alt="image">
 			</div>
 			<div class="mask">
 				<img src="img/mask.png" alt="">
@@ -104,13 +115,80 @@
 				<img src="img/story-flowers.png" alt="flowers">
 			</div>-->
 			<h1 class="title">Notre Histoire</h1>
-			<p class="m-auto">Juillet 2010 : une jolie rencontre
-				22 decembre 2010 : le debut d'une belle histoire
-				Septembre 2011 : un rapprochement geographique
-				Janvier 2017 : 6 mois separe par un ocean
-				Aout 2017 : le commencement d'une vie a deux
-				Avril 2019 : proprietaires!
-				12 septembre 2020 : Le debut d'une nouvelle aventure</p>
+			<div class="timeline-container">
+				<ul class="timeline timeline-centered">
+					<li class="timeline-item">
+						<div class="timeline-info">
+							<span>Juillet 2010</span>
+						</div>
+						<div class="timeline-marker"></div>
+						<div class="timeline-content">
+							<h4 class="timeline-title">Une jolie rencontre</h4>
+						</div>
+					</li>
+					<li class="timeline-item">
+						<div class="timeline-info">
+							<span>22 decembre 2010</span>
+						</div>
+						<div class="timeline-marker"></div>
+						<div class="timeline-content">
+							<h4 class="timeline-title">Le debut d'une belle histoire</h4>
+						</div>
+					</li>
+					<!--<li class="timeline-item period">
+						<div class="timeline-info"></div>
+						<div class="timeline-marker"></div>
+						<div class="timeline-content">
+							<h2 class="timeline-title">April 2016</h2>
+						</div>
+					</li>-->
+					<li class="timeline-item">
+						<div class="timeline-info">
+							<span>Septembre 2011</span>
+						</div>
+						<div class="timeline-marker"></div>
+						<div class="timeline-content">
+							<h4 class="timeline-title">Un rapprochement geographique</h4>
+						</div>
+					</li>
+					<li class="timeline-item">
+						<div class="timeline-info">
+							<span>Janvier 2017</span>
+						</div>
+						<div class="timeline-marker"></div>
+						<div class="timeline-content">
+							<h4 class="timeline-title">6 mois separe par un ocean</h4>
+						</div>
+					</li>
+					<li class="timeline-item">
+						<div class="timeline-info">
+							<span>Aout 2017</span>
+						</div>
+						<div class="timeline-marker"></div>
+						<div class="timeline-content">
+							<h4 class="timeline-title">Le commencement d'une vie a deux</h4>
+						</div>
+					</li>
+					<li class="timeline-item">
+						<div class="timeline-info">
+							<span>Avril 2019</span>
+						</div>
+						<div class="timeline-marker"></div>
+						<div class="timeline-content">
+							<h4 class="timeline-title">Proprietaires !</h4>
+						</div>
+					</li>
+					<li class="timeline-item">
+						<div class="timeline-info">
+							<span>12 septembre 2020</span>
+						</div>
+						<div class="timeline-marker"></div>
+						<div class="timeline-content">
+							<h4 class="timeline-title">Le debut d'une nouvelle aventure</h4>
+						</div>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</section>
 	<!-- Section Date -->
@@ -199,21 +277,21 @@
 				<div class="slick slick-wishes mb-0">
 					<div class="slider__item">
 						<div class="wishes__person">
-							<img class="rounded-circle m-auto" src="img/person1.jpg" alt="slider">
+							<img class="rounded-circle m-auto" src="img/temoin/avatar.jpg" alt="slider">
 						</div>
 						<h4 class="wishes__title font-weight-bold">Alex Cooper</h4>
 						<p class="mx-auto">"With warm congratulations to a very special pair. May you always find in each other the love, laughter and happiness that only partners in life share!"</p>
 					</div>
 					<div class="slider__item">
 						<div class="wishes__person">
-							<img class="rounded-circle m-auto" src="img/person2.jpg" alt="slider">
+							<img class="rounded-circle m-auto" src="img/temoin/avatar.jpg" alt="slider">
 						</div>
 						<h4 class="wishes__title font-weight-bold">Mary Alen</h4>
 						<p class="mx-auto">"True love stories never end! Happy wedding day and may there be many more chapters in the wonderful story of your love for one another."</p>
 					</div>
 					<div class="slider__item">
 						<div class="wishes__person">
-							<img class="rounded-circle m-auto" src="img/person3.jpg" alt="slider">
+							<img class="rounded-circle m-auto" src="img/temoin/avatar.jpg" alt="slider">
 						</div>
 						<h4 class="wishes__title font-weight-bold">John Colen</h4>
 						<p class="mx-auto">"A wedding wish for two special person: love is best when shared by two. You know that together you are stronger, together you are one. Have a wonderful married life!"</p>
@@ -249,6 +327,24 @@
 					</div>
 					<div class="slider__item">
 						<img src="img/slider/gallery-5.jpg" alt="slider">
+					</div>
+					<div class="slider__item">
+						<img src="img/slider/gallery-6.jpg" alt="slider">
+					</div>
+					<div class="slider__item">
+						<img src="img/slider/gallery-7.jpg" alt="slider">
+					</div>
+					<div class="slider__item">
+						<img src="img/slider/gallery-8.jpg" alt="slider">
+					</div>
+					<div class="slider__item">
+						<img src="img/slider/gallery-9.jpg" alt="slider">
+					</div>
+					<div class="slider__item">
+						<img src="img/slider/gallery-10.jpg" alt="slider">
+					</div>
+					<div class="slider__item">
+						<img src="img/slider/gallery-11.jpg" alt="slider">
 					</div>
 				</div>
 				<div class="gallery__slider-num d-none d-lg-flex">
