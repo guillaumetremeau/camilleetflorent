@@ -19,6 +19,7 @@ Table of Contents:
 10. Parallax
 */
 
+
 ;(function () {
 	'use strict';
 	/* 1. Windows on Load
@@ -240,39 +241,69 @@ Table of Contents:
 				inputField.prev('.control-label').removeClass('filled')
 			}
 		}
-	}
+	}/*
 	function submitForm() {
 		var $form = $('#rsvp-form');
 		$form.submit(function (e) {
 			$form.find('.error-msg').remove();
 			$form.find('input').removeClass('error');
 			var formData = {
-				'name': $form.find('input#inputName').val(),
-				'number': $form.find('input#inputNumber').val()
+				"participation": $form.find('input#participationTrue').prop('checked') | !$form.find('input#participationFalse').prop('checked'),
+				"names": $form.find('input#inputName').val(),
+				"firstName": $form.find('input#inputFirstName').val(),
+				"email": $form.find('input#inputEmail').val(),
+				"countGuest": $form.find('input#inputCountGuest').val(),
+				"comment": $form.find('#inputComment').val()
 			};
+			// formData = JSON.stringify(formData);
+			// console.log(formData);
+			 formData = {
+				"one": "Singular sensation",
+				"two": "Beady little eyes",
+				"three": "Little birds pitch by my doorstep"
+			}; 
+			//formData = JSON.stringify(formData);
+			
+			console.log(formData);
+			formData = JSON.stringify(formData);
+			console.log(formData);
+			//let parsed = JSON.parse(formData);
+			//console.log(parsed);
 
+			console.log('try');
 			$.ajax({
-				type: 'POST',
-				url: 'form.php',
+				type: 'post',
+				url: '{"mydate": "123"}',
 				data: formData,
 				dataType: 'json',
 				encode: true,
+				error: function (jqXHR, textStatus, errorThrown) {
+					var test = $.parseJSON(jqXHR.responseText);
+					var test2 = $.parseJSON(test.d);
+					alert(test2[0].Name);
+				}
 			}).done(function(data) {
-				console.log(data);
+				console.log(data.message);
 				if (data.success) {
 					$('.success-msg').html('');
 					$('.success-msg').html(data.message);
 				} else {
-					if (data.errors.name) {
+					if (data.errors.names) {
 						$('#inputName').addClass('error').after('<span class="error-msg">'+data.errors.name+'</span>');
-					} else if (data.errors.number) {
-						$('#inputNumber').addClass('error').after('<span class="error-msg">'+data.errors.number+'</span>');
-					}
+					} else if (data.errors.participation) {
+						$('#participationFalse').addClass('error').after('<span class="error-msg">'+data.errors.participation+'</span>');
+					} else if (data.errors.firstNames) {
+						$('#inputFirstName').addClass('error').after('<span class="error-msg">'+data.errors.firstNames+'</span>');
+					} else if (data.errors.email) {
+						$('#inputEmail').addClass('error').after('<span class="error-msg">'+data.errors.email+'</span>');
+					} else if (data.errors.countGuest) {
+						$('#inputCountGuest').addClass('error').after('<span class="error-msg">'+data.errors.countGuest+'</span>');
+					}				
 				}
 			});
 			e.preventDefault();
 		});
-	};
+	};*/
 	/* 9. Page scroll
 	====================*/
 	var pageScroll = function() {
@@ -321,5 +352,4 @@ Table of Contents:
 		pageScroll();
 		submitForm();
 	});
-
 }());
