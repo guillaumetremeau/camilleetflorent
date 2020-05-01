@@ -21,45 +21,52 @@
 			<script src="js/vendor/respond.min.js"></script>
 		<![endif]-->
 	</head>
-<body data-spy="scroll" data-target="#navbarSupportedContent" data-offset="100">
-    <h1>Merci de votre réponse!!</h1>
-    <p><a href="./">Revenir à l'acceuil</a></p>
+  <body data-spy="scroll" data-target="#navbarSupportedContent" data-offset="100">
+    <!-- Thank You -->
+    <section id="thankYou" class="section text-center">
+      <div class="container">
+        <h1 class="title">Merci de votre réponse</h1>
+        <p>Un email de confirmation contenant les détails de votre réponse vous a été envoyé.</p>
+        <p class="font-weight-bold m-4"><a href="./">Revenir à l'acceuil</a></p>
+        <img class="d-none d-lg-block navbar-brand__img" src="img/LogoLoader.png" alt="logo">
+      </div>
+    </section>
     <!-- Footer -->
     <div w3-include-html="footer.html"></div>
-	
-	<script src="js/vendor/jquery.min.js"></script>
-	<script src="js/vendor/jquery.easing.1.3.js"></script>
-	<script src="js/vendor/popper.min.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-        function includeHTML() {
-          var z, i, elmnt, file, xhttp;
-          /* Loop through a collection of all HTML elements: */
-          z = document.getElementsByTagName("*");
-          for (i = 0; i < z.length; i++) {
-            elmnt = z[i];
-            /*search for elements with a certain atrribute:*/
-            file = elmnt.getAttribute("w3-include-html");
-            if (file) {
-              /* Make an HTTP request using the attribute value as the file name: */
-              xhttp = new XMLHttpRequest();
-              xhttp.onreadystatechange = function() {
-                if (this.readyState == 4) {
-                  if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-                  if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-                  /* Remove the attribute, and call this function once more: */
-                  elmnt.removeAttribute("w3-include-html");
-                  includeHTML();
-                }
-              } 
-              xhttp.open("GET", file, true);
-              xhttp.send();
-              /* Exit the function: */
-              return;
+    
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="js/vendor/jquery.easing.1.3.js"></script>
+    <script src="js/vendor/popper.min.js"></script>
+      <script src="js/main.js"></script>
+      <script>
+          function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /* Loop through a collection of all HTML elements: */
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+              elmnt = z[i];
+              /*search for elements with a certain atrribute:*/
+              file = elmnt.getAttribute("w3-include-html");
+              if (file) {
+                /* Make an HTTP request using the attribute value as the file name: */
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                  if (this.readyState == 4) {
+                    if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                    if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                    /* Remove the attribute, and call this function once more: */
+                    elmnt.removeAttribute("w3-include-html");
+                    includeHTML();
+                  }
+                } 
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                /* Exit the function: */
+                return;
+              }
             }
           }
-        }
-        includeHTML();
-    </script>
-</body>
+          includeHTML();
+      </script>
+  </body>
 </html>
