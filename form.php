@@ -80,10 +80,11 @@ else
             'Content-Disposition: inline'. "\r\n" .
             'Content-Transfer-Encoding: 7bit'." \r\n" .
             'X-Mailer:PHP/'.phpversion()."\r\n".
-            'List-Unsubscribe: <mailto: ..?subject=unsubscribe>';
+            'List-Unsubscribe: <mailto: ..?subject=unsubscribe>'."\r\n";
  
         // envoyer une copie à cam et flo
         $headers .= 'Cc:'.$email."\r\n";
+        echo $headers;
  
         // Remplacement de certains caractères spéciaux
         $comments = str_replace("&#039;","'",$comments);
@@ -96,28 +97,22 @@ else
 		$comments = str_replace("&amp;","&",$comments);
         
         // Encodage de l'objet
-
+        $bodyTop = "Bonjour,\r\nC'est avec joie que nous avons bien reçu votre confirmation de présence.";
+        $bodyBottom = "Merci de votre participation! Nous vous attendons avec impatience!\r\nPour plus de détail, consultez le site (camilleetflorent.fr) ou laissez nous un message (mariage.camille.florent@gmail.fr).\r\nBisous\r\n\nCamille et Florent";
+        if($participation == 'false'){
+            $bodyTop = "Bonjour,\r\nNous vous remercions chaleureusement pour votre réponse.";
+            $bodyBottom = "Pour plus de détail, consultez le site (camilleetflorent.fr) ou laissez nous un message (mariage.camille.florent@gmail.fr).\r\nBisous\r\n\nCamille et Florent";
+        }
 
 		// Construction du mail
 		$object = '=?UTF-8?B?'.base64_encode('camilleetflorent.fr -- Réponse de '.$firstNames).'?=';
-        $body = "
-            Bonjour,\r\n
-            C'est avec joie que nous avons bien reçu votre confirmation de présence.\r\n\n
-            Participation: ".$participation."\r\n
-            Prénom(s) et Nom(s): ".$firstNames."\r\n
-            Email : ".$destinataire."\r\n
-            Nombre de concernés : ".$countGuest."\r\n
-            Commentaires : ".$comments."\r\n\n
-            Merci de votre participation! Nous vous attendons avec impatience!\r\n
-            Bisous\r\n\n
-            Camille et Florent
-		";
+        $body = $bodyTop."\r\n\nParticipation: ".$participation."\r\nPrénom(s) et Nom(s): ".$firstNames."\r\nEmail : ".$destinataire."\r\nNombre de concernés : ".$countGuest."\r\nCommentaires : ".$comments."\r\n\n".$bodyBottom;
  
         // Envoi du mail
  
         if (mail($destinataire, $object, $body, $headers))
         {
-            header( 'Location: http://www.camilleetflorent.fr/thankYou.html' )
+            header( 'Location: http://www.camilleetflorent.fr/thankYou.html' );
         }
         else
         {
