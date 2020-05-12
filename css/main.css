@@ -437,6 +437,32 @@ a:hover {
 ================*/
 
 /*
+Gallery Scroll snap
+================*/
+
+.slick-slide {
+	margin: 0 10px;
+}
+
+.carousel {
+	margin: 0 10%;
+}
+
+.scroll-item {
+	max-width: 100%;
+	max-height: 450px;
+}
+
+.scroll-item img {
+	max-height: 450px;
+	max-width: 100%;
+	height: auto;
+	width: auto\9; /* ie8 */
+	margin: auto;
+}
+
+
+/*
 Thank you section
 ================*/
 #thankYou {
@@ -1417,42 +1443,6 @@ input.search-field {
 	z-index: 2;
 }
 
-.gallery__slider {
-	position: relative;
-	margin-top: 80px;
-}
-
-@media only screen and (min-width: 992px) {
-	.gallery__slider {
-		margin-bottom: 100px;
-	}
-}
-
-.gallery__slider .slick-list {
-	margin-bottom: 30px;
-}
-
-.gallery__slider-num {
-	position: absolute;
-	bottom: -79px;
-	display: -ms-flexbox;
-	display: flex;
-	left: 50%;
-	-ms-transform: translateX(-50%);
-	transform: translateX(-50%);
-	font-size: 30px;
-	font-family: georgia;
-}
-
-.gallery__flower-prlx-l {
-	top: -150px;
-}
-
-.gallery__flower-prlx-r {
-	bottom: -75px;
-	right: 0;
-}
-
 .wishes__slider {
 	margin-top: 80px;
 }
@@ -1468,9 +1458,6 @@ input.search-field {
 	margin-bottom: 40px;
 }
 
-.wishes__slider .slick-list {
-	margin-bottom: 30px;
-}
 
 @media only screen and (min-width: 768px) {
 	.wishes__slider p {

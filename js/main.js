@@ -78,77 +78,41 @@ Table of Contents:
 		new CircleType(document.getElementById('js-circle-type')).radius(384);
 	}
 
-	/* 6. Slick slider
+	/* 6. Slider
 	====================*/
-	var slider = function() {
-		if ($('.slick-gallery')) {
-			$('.slick-gallery').slick({
-				centerMode: false,
-				dots: false,
-				infinite: true,
-				speed: 300,
-				slidesToShow: 3,
-				slidesToScroll: 1,
-				responsive: [
-					{
-						breakpoint: 1024,
-						settings: {
-							slidesToShow: 3,
-							slidesToScroll: 3,
-							infinite: true,
-							dots: true
-						}
-					},
-					{
-						breakpoint: 768,
-						settings: {
-							slidesToShow: 1,
-							slidesToScroll: 1,
-							dots: true
-						}
+	$(document).ready(function(){
+		$('.carousel').slick({
+			lazyLoad: 'progressive',
+			centerMode: true,
+			dots: true,
+			infinite: true,
+			speed: 300,
+			slidesToShow: 1,
+			variableWidth: true,
+			slidesToScroll: 1,
+			responsive: [{
+					breakpoint: 992,
+					settings: {
+						variableWidth: false,
+						centerMode: true,
+						adaptiveHeight: true
 					}
-				]
-			});
-		}
-		if ($('.slick-wishes')) {
-			$('.slick-wishes').slick({
-				dots: true,
-				arrows: false
-			});
-		}
-		if ($('.slick-gifts')) {
-			$('.slick-gifts').slick({
-				dots: true,
-				arrows: false,
-				slidesToShow: 5,
-				responsive: [
-					{
-						breakpoint: 1024,
-						settings: {
-							slidesToShow: 3,
-							slidesToScroll: 3,
-							infinite: true,
-							dots: true
-						}
-					},
-					{
-						breakpoint: 640,
-						settings: {
-							slidesToShow: 1,
-							slidesToScroll: 1,
-						}
+				},
+				{
+					breakpoint: 480,
+					settings: {
+						dots: false,
+						variableWidth: false,
+						centerMode: true,
+						adaptiveHeight: true
 					}
-				]
-			});
-		}
-	}
-	var sliderNum = function() {
-		var $slides = $('.slick-gallery .slick-slide').not('.slick-cloned');
-		var $currentSlide = $('.slick-slide.slick-current').attr('data-slick-index');
-		$('.gallery__slider-current').text(+$currentSlide + 1);
-		$('.gallery__slider-all').text($slides.length);
-	}
-	$('.slick').on('afterChange', sliderNum);
+				}]
+		});
+		$('.carousel').slickLightbox({
+			src: 'src',
+			itemSelector: '.scroll-item img'
+		})
+	  });
 
 	/* 7. Countdown
 	====================*/
