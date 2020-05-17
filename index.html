@@ -38,7 +38,7 @@
 			myVar = setTimeout(showPage, 5000);
 		}
 		function showPage() {
-			$('#loader').fadeOut('slow', console.log('fadeOut'));
+			$('#loader').fadeOut('slow');
 		}
 		loadPage();
 	</script>
@@ -67,9 +67,6 @@
 					</li>
 					<li class="nav-item">
 						<a class="nav-link page-scroll" href="#rsvp">RSVP</a>
-					</li>
-					<li class="nav-item ml-lg-4 d-lg-none">
-						<span class="nav-link">&copy; Camille & Florent 2020.</span>
 					</li>
 				</ul>
 			</div>
@@ -121,7 +118,7 @@
 					</li>
 					<li class="timeline-item">
 						<div class="timeline-info">
-							<span>22 decembre 2010</span>
+							<span>22 décembre 2010</span>
 						</div>
 						<div class="timeline-marker"></div>
 						<div class="timeline-content">
@@ -159,7 +156,7 @@
 						</div>
 						<div class="timeline-marker"></div>
 						<div class="timeline-content">
-							<h4 class="timeline-title">Le commencement d'une vie a deux</h4>
+							<h4 class="timeline-title">Le commencement d'une vie à deux</h4>
 						</div>
 					</li>
 					<li class="timeline-item">
@@ -215,12 +212,12 @@
 	<!-- Section Events -->
 	<section id="events" class="events section section--blue text-center">
 		<div class="container">
-			<h1 class="title">Evenement</h1>
-			<p class="subtitle mx-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			<h1 class="title">Evénement</h1>
+			<p class="subtitle mx-auto"></p>
 			<div id="accordion">
 				<div class="accordion__header d-flex justify-content-center">
 					<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-						Ceremonie
+						Cérémonie
 					</button>
 					<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 						Réception
@@ -234,9 +231,9 @@
 								<img class="accordion__item-img" src="img/ceremony.jpg" alt="ceremony">
 							</div>
 							<div class="col-md-6 text-left">
-								<h3 class="accordion__item-subheading">Où et Quand</h3>
+								<h3 class="accordion__item-subheading">Où et Quand ?</h3>
 								<p class="font-weight-bold">Eglise Saint Symphorien</p>
-								<p class="d-flex align-items-center"><i class="fa fa-2x fa-map-marker align-middle pr-1"></i>1 place de Touches, 71640 Mercurey</p>
+								<p class="d-flex align-items-center"><i class="fa fa-2x fa-map-marker align-middle pr-1"></i>1, place de Touches 71640 Mercurey</p>
 								<p class="d-flex align-items-center"><i class="fa fa-2x fa-clock-o align-middle pr-1"></i>le 12 septembre à 14h</p>
 								<a href="https://www.google.fr/maps/place/Saint+Symphorien/@46.8293635,4.712963,17z/data=!3m1!4b1!4m5!3m4!1s0x47f2f8973bdd01ab:0xea20f4d7dfde2510!8m2!3d46.8293635!4d4.7151517">
 									<div class="btn btn-outline-dark rounded-0 px-2 py-1">Voir sur une carte</div>
@@ -251,10 +248,10 @@
 								<img class="accordion__item-img" src="img/reception.jpg" alt="reception">
 							</div>
 							<div class="col-md-6 text-left">
-								<h3 class="accordion__item-subheading">Où et Quand</h3>
+								<h3 class="accordion__item-subheading">Où et Quand ?</h3>
 								<p class="font-weight-bold">Domaine de la Chapelle-de-Guinchay</p>
-								<p class="d-flex align-items-center"><i class="fa fa-2x fa-map-marker align-middle pr-1"></i>1333, route de Juliénas, 71570 La Chapelle de Guinchay</p>
-								<p class="d-flex align-items-center"><i class="fa fa-2x fa-clock-o align-middle pr-1"></i>le 12 septembre à 17h</p>
+								<p class="d-flex align-items-center"><i class="fa fa-2x fa-map-marker align-middle pr-1"></i>1333, route de Juliénas 71570 La Chapelle de Guinchay</p>
+								<p class="d-flex align-items-center"><i class="fa fa-2x fa-clock-o align-middle pr-1"></i>le 12 septembre à 17h30</p>
 								<a href="https://www.google.fr/maps/place/1333+Route+de+Juliénas,+71570+La+Chapelle-de-Guinchay/@46.2141751,4.7570176,19z/data=!3m1!4b1!4m5!3m4!1s0x47f37b3ceeb8c91d:0xeddf404204490867!8m2!3d46.2141751!4d4.7575648">
 									<div class="btn btn-outline-dark rounded-0 px-2 py-1">Voir sur une carte</div>
 								</a>
@@ -375,11 +372,11 @@
 		<div class="container position-relative">
 			<div class="content">
 				<h1 class="title">Galerie</h1>
-				<p class="subtitle mx-auto">Des photos pour se souvenir de ce joli moment. </p>
+				<p class="subtitle mx-auto">Des photos pour se souvenir de ces jolis moments. </p>
 				<div id="accordion">
 					<div class="accordion__header d-flex justify-content-center">
 						<button class="btn btn-link" data-toggle="collapse" data-target="#collapsePreparatif" aria-expanded="true" aria-controls="collapsePreparatif">
-							Pendant les preparatifs
+							Pendant les préparatifs
 						</button>
 					</div>
 					<div class="accordion__body">
@@ -421,6 +418,52 @@
 							</div>
 						</div>
 					</div>
+					<!--
+					<div class="accordion__header d-flex justify-content-center">
+						<button class="btn btn-link" data-toggle="collapse" data-target="#collapsePreparatif" aria-expanded="true" aria-controls="collapsePreparatif">
+							Fiançailles
+						</button>
+					</div>
+					<div class="accordion__body">
+						<div id="collapsePreparatif" class="collapse show" data-parent="#accordion">
+							<div class="carousel">
+								<div class="scroll-item">
+									<img src="img/slider/galerie-01.jpg" alt="slider">
+								</div>
+								<div class="scroll-item">
+									<img src="img/slider/galerie-02.jpg" alt="slider">
+								</div>
+								<div class="scroll-item">
+									<img src="img/slider/galerie-03.jpg" alt="slider">
+								</div>
+								<div class="scroll-item">
+									<img src="img/slider/galerie-04.jpg" alt="slider">
+								</div>
+								<div class="scroll-item">
+									<img src="img/slider/galerie-05.jpg" alt="slider">
+								</div>
+								<div class="scroll-item">
+									<img src="img/slider/galerie-06.jpg" alt="slider">
+								</div>
+								<div class="scroll-item">
+									<img src="img/slider/galerie-07.jpg" alt="slider">
+								</div>
+								<div class="scroll-item">
+									<img src="img/slider/galerie-08.jpg" alt="slider">
+								</div>
+								<div class="scroll-item">
+									<img src="img/slider/galerie-09.jpg" alt="slider">
+								</div>
+								<div class="scroll-item">
+									<img src="img/slider/galerie-10.jpg" alt="slider">
+								</div>
+								<div class="scroll-item">
+									<img src="img/slider/galerie-11.jpg" alt="slider">
+								</div>
+							</div>
+						</div>
+					</div>
+				-->
 				</div>
 			</div>
 		</div>
@@ -432,9 +475,9 @@
 			<div class="events__info">
 				<div class="row text-left">
 					<div class="col-md-6 event__info-item">
-						<h6 class="event__info-header font-weight-bold">Hotels</h6>
-						<p><a href="https://www.ledomaine.eu">Gite « le domaine »</a></p>
-						<p><a href="https://all.accor.com/hotel/0670/index.fr.shtml?utm_campaign=seo+maps&utm_medium=seo+maps&utm_source=google+Maps#section-room">Hôtel Ibis Macon sud</a></p>
+						<h6 class="event__info-header font-weight-bold">Hôtels</h6>
+						<p><a href="https://www.ledomaine.eu">Gite « Le Domaine »</a></p>
+						<p><a href="https://all.accor.com/hotel/0670/index.fr.shtml?utm_campaign=seo+maps&utm_medium=seo+maps&utm_source=google+Maps#section-room">Hôtel Ibis Mâcon sud</a></p>
 					</div>
 					<!-- <div class="col-md-4 event__info-item">
 						<h6 class="event__info-header font-weight-bold">Airbnb</h6>
@@ -452,8 +495,9 @@
 	<section class="gifts section section--blue text-center">
 		<div class="container">
 			<a href="https://www.millemercismariage.com/camilleflorent/mariage-de-camille-tremeau-et-florent-vimort.html">
-			<h1 class="title">Liste cadeaux</h1>
-			<p class="subtitle m-auto">Vous trouverez ici notre liste de cadeaux de mariage</p></a>
+				<h1 class="title">Liste de mariage</h1><br>
+				<div class="btn btn-outline-dark rounded-0 px-2 py-1 mt-3">Liste</div>
+			</a>
 		</div>
 	</section>
 	<!-- RSVP -->
@@ -465,7 +509,7 @@
 				</div>-->
 				<div class="col-sm-12 align-self-center">
 					<h2 class="title">RSVP</h2>
-					<h6 class="text-uppercase font-weight-bold mb-0">Serez-vous présent?</h6>
+					<h6 class="text-uppercase font-weight-bold mb-0">Serez-vous présent ?</h6>
 					<form id="rsvp-form" action="form.php" method="POST">
 						<div class="row">
 							<div class="col-12 m-md-0">
@@ -478,9 +522,6 @@
 										<input class="form-check-input" type="radio" name="participation" id="participationFalse" value=false required>
 										<label class="form-check-label" for="participationFalse">Ne participe(nt) pas</label>
 									</div>
-									<small class="form-text text-muted">
-										Vous pouvez nous donner deux réponse si une partie d'entre vous sera présente et l'autre non.
-									</small>
 								</div>
 							</div>
 							<div class="col-md-6 m-md-0">
@@ -489,20 +530,16 @@
 									<input type="text" name='firstNames' class="form-control" id="inputFirstName" required>
 								</div>
 								<div class="form-group">
-									<label class="control-label" for="inputEmail">Votre Email</label>
+									<label class="control-label" for="inputEmail">Votre e-mail</label>
 									<input type="email" name='email' class="form-control" id="inputEmail" required>
-								</div>
-								<div class="form-group">
-									<label class="control-label" for="inputCountGuest">Nombre d'invités concernés</label>
-									<input type="number" name='countGuest' class="form-control" id="inputCountGuest" required>
 								</div>
 							</div>
 							<div class="col-md-6 m-md-0">
 								<div class="form-group">
-									<label class="control-label" for="inputComment">Commentaires</label>
-									<textarea class="form-control" name='comments' id="inputComment" rows="5"></textarea>
+									<label class="control-label" for="inputComment">Commentaire(s)</label>
+									<textarea class="form-control" name='comments' id="inputComment" rows="3"></textarea>
 									<small class="form-text text-muted">
-										Veuillez préciser ici vos régimes particuliers, allergies ou toutes autres informations utiles (vous pouvez également nous laisser un petit mot ;) ).
+										Veuillez préciser ici vos régimes particuliers, allergies ou toutes autres informations utiles (Vous pouvez également nous laisser un petit mot &#128521).
 									</small>
 								</div>
 							</div>

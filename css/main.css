@@ -459,6 +459,7 @@ Gallery Scroll snap
 	height: auto;
 	width: auto\9; /* ie8 */
 	margin: auto;
+	cursor: pointer;
 }
 
 
@@ -1036,6 +1037,12 @@ input.search-field {
 	display: none;
 }
 
+@media only screen and (max-width: 992px) {
+	.nav-item .nav-link:after {
+		display: none;
+	}
+}
+
 .navbar-expand-lg .navbar-nav .nav-link {
 	padding: 24px 30px;
 }
@@ -1093,6 +1100,7 @@ input.search-field {
 }
 
 .navbar-brand__img {
+	padding: 5px 0;
 	max-height: 3.75rem;
 	position: relative;
 	transition: all 0.5s ease;
@@ -1365,7 +1373,7 @@ input.search-field {
 
 .date-section__block .title--special {
 	font-size: 40px;
-	line-height: 40px;
+	line-height: 70px;
 	margin-bottom: 30px;
 }
 

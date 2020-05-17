@@ -62,7 +62,6 @@ else
 	$participation 	= (isset($_POST['participation'])) 	? Rec($_POST['participation']) 	: '';
 	$firstNames		= (isset($_POST['firstNames'])) 	? Rec($_POST['firstNames']) 	: '';
     $destinataire   = (isset($_POST['email'])) 			? Rec($_POST['email']) 			: '';
-	$countGuest		= (isset($_POST['countGuest'])) 	? Rec($_POST['countGuest']) 	: '';
     $comments 		= (isset($_POST['comments'])) 		? Rec($_POST['comments']) 		: '';
     
     // $destinataire = 'test-lufnibw8e@srv1.mail-tester.com';
@@ -70,7 +69,7 @@ else
     // On va vérifier les variables et l'email ...
     $destinataire = (IsEmail($destinataire)) ? $destinataire : ''; // soit l'email est vide si erroné, soit il vaut l'email entré
  
-    if (($participation != '') && ($firstNames != '') && ($destinataire != '') && ($countGuest != ''))
+    if (($participation != '') && ($firstNames != '') && ($destinataire != ''))
     {
         // les 4 variables sont remplies, on génère puis envoie le mail
         $headers  = 'MIME-Version: 1.0' . "\r\n";
@@ -98,15 +97,15 @@ else
         
         // Encodage de l'objet
         $bodyTop = "Bonjour,\r\nC'est avec joie que nous avons bien reçu votre confirmation de présence.";
-        $bodyBottom = "Merci de votre participation! Nous vous attendons avec impatience!\r\nPour plus de détail, consultez le site (camilleetflorent.fr) ou laissez nous un message (mariage.camille.florent@gmail.fr).\r\nBisous\r\n\nCamille et Florent";
+        $bodyBottom = "Merci pour votre participation ! Nous vous attendons avec impatience !\r\nPour plus de détails concernant l'événement, consultez le site (camilleetflorent.fr) ou laissez nous un message (mariage.camille.florent@gmail.fr).\r\nBisous\r\n\nCamille et Florent";
         if($participation == 'false'){
             $bodyTop = "Bonjour,\r\nNous vous remercions chaleureusement pour votre réponse.";
-            $bodyBottom = "Pour plus de détail, consultez le site (camilleetflorent.fr) ou laissez nous un message (mariage.camille.florent@gmail.fr).\r\nBisous\r\n\nCamille et Florent";
+            $bodyBottom = "Pour plus de détails concernant l'événement, consultez le site (camilleetflorent.fr) ou laissez nous un message (mariage.camille.florent@gmail.fr).\r\nBisous\r\n\nCamille et Florent";
         }
 
 		// Construction du mail
 		$object = '=?UTF-8?B?'.base64_encode('camilleetflorent.fr -- Réponse de '.$firstNames).'?=';
-        $body = $bodyTop."\r\n\nParticipation: ".$participation."\r\nPrénom(s) et Nom(s): ".$firstNames."\r\nEmail : ".$destinataire."\r\nNombre de concernés : ".$countGuest."\r\nCommentaires : ".$comments."\r\n\n".$bodyBottom;
+        $body = $bodyTop."\r\n\nParticipation: ".$participation."\r\nPrénom(s) et Nom(s): ".$firstNames."\r\nE-mail : ".$destinataire."\r\nCommentaire(s) : ".$comments."\r\n\n".$bodyBottom;
  
         // Envoi du mail
  

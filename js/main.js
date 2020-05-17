@@ -80,39 +80,41 @@ Table of Contents:
 
 	/* 6. Slider
 	====================*/
-	$(document).ready(function(){
-		$('.carousel').slick({
-			lazyLoad: 'progressive',
-			centerMode: true,
-			dots: true,
-			infinite: true,
-			speed: 300,
-			slidesToShow: 1,
-			variableWidth: true,
-			slidesToScroll: 1,
-			responsive: [{
-					breakpoint: 992,
-					settings: {
-						variableWidth: false,
-						centerMode: true,
-						adaptiveHeight: true
-					}
-				},
-				{
-					breakpoint: 480,
-					settings: {
-						dots: false,
-						variableWidth: false,
-						centerMode: true,
-						adaptiveHeight: true
-					}
-				}]
-		});
-		$('.carousel').slickLightbox({
-			src: 'src',
-			itemSelector: '.scroll-item img'
-		})
-	  });
+	var slider = function(){
+		if($('.carousel')) {
+			$('.carousel').slick({
+				lazyLoad: 'progressive',
+				centerMode: true,
+				dots: true,
+				infinite: true,
+				speed: 300,
+				slidesToShow: 1,
+				variableWidth: true,
+				slidesToScroll: 1,
+				responsive: [{
+						breakpoint: 992,
+						settings: {
+							variableWidth: false,
+							centerMode: true,
+							adaptiveHeight: true
+						}
+					},
+					{
+						breakpoint: 480,
+						settings: {
+							dots: false,
+							variableWidth: false,
+							centerMode: true,
+							adaptiveHeight: true
+						}
+					}]
+			});
+			$('.carousel').slickLightbox({
+				src: 'src',
+				itemSelector: '.scroll-item img'
+			})
+		}
+	}
 
 	/* 7. Countdown
 	====================*/
@@ -310,10 +312,8 @@ Table of Contents:
 
 	$(function(){
 		slider();
-		sliderNum();
 		countdown();
 		filledLabels();
 		pageScroll();
-		submitForm();
 	});
 }());
