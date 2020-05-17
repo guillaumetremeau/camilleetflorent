@@ -93,19 +93,24 @@ else
         $comments = str_replace('<br />','',$comments);
         $comments = str_replace("&lt;","<",$comments);
         $comments = str_replace("&gt;",">",$comments);
-		$comments = str_replace("&amp;","&",$comments);
+        $comments = str_replace("&amp;","&",$comments);
+        
+        $participationLine = 'oui';
+        if ($participation == 'false') {
+            $participationLine = 'non';
+        } 
         
         // Encodage de l'objet
         $bodyTop = "Bonjour,\r\nC'est avec joie que nous avons bien reçu votre confirmation de présence.";
-        $bodyBottom = "Merci pour votre participation ! Nous vous attendons avec impatience !\r\nPour plus de détails concernant l'événement, consultez le site (camilleetflorent.fr) ou laissez nous un message (mariage.camille.florent@gmail.fr).\r\nBisous\r\n\nCamille et Florent";
+        $bodyBottom = "Merci pour votre participation ! Nous vous attendons avec impatience !\r\nPour plus de détails concernant l'événement, consultez le site (camilleetflorent.fr) ou laissez nous un message (mariage.camille.florent@gmail.fr).\r\nBises\r\n\nCamille et Florent";
         if($participation == 'false'){
             $bodyTop = "Bonjour,\r\nNous vous remercions chaleureusement pour votre réponse.";
-            $bodyBottom = "Pour plus de détails concernant l'événement, consultez le site (camilleetflorent.fr) ou laissez nous un message (mariage.camille.florent@gmail.fr).\r\nBisous\r\n\nCamille et Florent";
+            $bodyBottom = "Pour plus de détails concernant l'événement, consultez le site (camilleetflorent.fr) ou laissez nous un message (mariage.camille.florent@gmail.fr).\r\nBises\r\n\nCamille et Florent";
         }
 
 		// Construction du mail
 		$object = '=?UTF-8?B?'.base64_encode('camilleetflorent.fr -- Réponse de '.$firstNames).'?=';
-        $body = $bodyTop."\r\n\nParticipation: ".$participation."\r\nPrénom(s) et Nom(s): ".$firstNames."\r\nE-mail : ".$destinataire."\r\nCommentaire(s) : ".$comments."\r\n\n".$bodyBottom;
+        $body = $bodyTop."\r\n\nParticipation: ".$participationLine."\r\nPrénom(s) et Nom(s): ".$firstNames."\r\nE-mail : ".$destinataire."\r\nCommentaire(s) : ".$comments."\r\n\n".$bodyBottom;
  
         // Envoi du mail
  
