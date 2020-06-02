@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167452949-1"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-167452949-1');
+		</script>
+
 		<title>Camille & Florent</title>
 		<meta charset=utf-8>
 		<meta name=description content="">
@@ -373,59 +383,17 @@
 			<div class="content">
 				<h1 class="title">Galerie</h1>
 				<p class="subtitle mx-auto">Des photos pour se souvenir de ces jolis moments. </p>
-				<div id="accordion">
+				<div id="accordionSlide">
 					<div class="accordion__header d-flex justify-content-center">
 						<button class="btn btn-link" data-toggle="collapse" data-target="#collapsePreparatif" aria-expanded="true" aria-controls="collapsePreparatif">
 							Pendant les préparatifs
 						</button>
-					</div>
-					<div class="accordion__body">
-						<div id="collapsePreparatif" class="collapse show" data-parent="#accordion">
-							<div class="carousel">
-								<div class="scroll-item">
-									<img src="img/slider/galerie-01.jpg" alt="slider">
-								</div>
-								<div class="scroll-item">
-									<img src="img/slider/galerie-02.jpg" alt="slider">
-								</div>
-								<div class="scroll-item">
-									<img src="img/slider/galerie-03.jpg" alt="slider">
-								</div>
-								<div class="scroll-item">
-									<img src="img/slider/galerie-04.jpg" alt="slider">
-								</div>
-								<div class="scroll-item">
-									<img src="img/slider/galerie-05.jpg" alt="slider">
-								</div>
-								<div class="scroll-item">
-									<img src="img/slider/galerie-06.jpg" alt="slider">
-								</div>
-								<div class="scroll-item">
-									<img src="img/slider/galerie-07.jpg" alt="slider">
-								</div>
-								<div class="scroll-item">
-									<img src="img/slider/galerie-08.jpg" alt="slider">
-								</div>
-								<div class="scroll-item">
-									<img src="img/slider/galerie-09.jpg" alt="slider">
-								</div>
-								<div class="scroll-item">
-									<img src="img/slider/galerie-10.jpg" alt="slider">
-								</div>
-								<div class="scroll-item">
-									<img src="img/slider/galerie-11.jpg" alt="slider">
-								</div>
-							</div>
-						</div>
-					</div>
-					<!--
-					<div class="accordion__header d-flex justify-content-center">
-						<button class="btn btn-link" data-toggle="collapse" data-target="#collapsePreparatif" aria-expanded="true" aria-controls="collapsePreparatif">
+						<button class="btn btn-link" data-toggle="collapse" data-target="#collapseFiancaille" aria-expanded="false" aria-controls="collapseFiancaille">
 							Fiançailles
 						</button>
 					</div>
 					<div class="accordion__body">
-						<div id="collapsePreparatif" class="collapse show" data-parent="#accordion">
+						<div id="collapsePreparatif" class="collapse show" data-parent="#accordionSlide">
 							<div class="carousel">
 								<div class="scroll-item">
 									<img src="img/slider/galerie-01.jpg" alt="slider">
@@ -462,8 +430,59 @@
 								</div>
 							</div>
 						</div>
+						<div id="collapseFiancaille" class="collapse" data-parent="#accordionSlide">
+							<div class="carousel">
+								<div class="scroll-item">
+									<img src="img/slider/fian-01.jpg" alt="slider">
+								</div>
+								<div class="scroll-item">
+									<img src="img/slider/fian-02.jpg" alt="slider">
+								</div>
+								<div class="scroll-item">
+									<img src="img/slider/fian-03.jpg" alt="slider">
+								</div>
+								<div class="scroll-item">
+									<img src="img/slider/fian-04.jpg" alt="slider">
+								</div>
+								<div class="scroll-item">
+									<img src="img/slider/fian-05.jpg" alt="slider">
+								</div>
+								<div class="scroll-item">
+									<img src="img/slider/fian-06.jpg" alt="slider">
+								</div>
+								<div class="scroll-item">
+									<img src="img/slider/fian-07.jpg" alt="slider">
+								</div>
+								<div class="scroll-item">
+									<img src="img/slider/fian-08.jpg" alt="slider">
+								</div>
+								<div class="scroll-item">
+									<img src="img/slider/fian-09.jpg" alt="slider">
+								</div>
+								<div class="scroll-item">
+									<img src="img/slider/fian-10.jpg" alt="slider">
+								</div>
+								<div class="scroll-item">
+									<img src="img/slider/fian-11.jpg" alt="slider">
+								</div>
+								<div class="scroll-item">
+									<img src="img/slider/fian-12.jpg" alt="slider">
+								</div>
+								<div class="scroll-item">
+									<img src="img/slider/fian-13.jpg" alt="slider">
+								</div>
+								<div class="scroll-item">
+									<img src="img/slider/fian-14.jpg" alt="slider">
+								</div>
+								<div class="scroll-item">
+									<img src="img/slider/fian-15.jpg" alt="slider">
+								</div>
+								<div class="scroll-item">
+									<img src="img/slider/fian-16.jpg" alt="slider">
+								</div>
+							</div>
+						</div>
 					</div>
-				-->
 				</div>
 			</div>
 		</div>
@@ -475,9 +494,12 @@
 			<div class="events__info">
 				<div class="row text-left">
 					<div class="col-md-6 event__info-item">
-						<h6 class="event__info-header font-weight-bold">Hôtels</h6>
-						<p><a href="https://www.ledomaine.eu">Gite « Le Domaine »</a></p>
-						<p><a href="https://all.accor.com/hotel/0670/index.fr.shtml?utm_campaign=seo+maps&utm_medium=seo+maps&utm_source=google+Maps#section-room">Hôtel Ibis Mâcon sud</a></p>
+						<h6 class="event__info-header font-weight-bold">Gîtes</h6>
+						<p><a href="https://www.ledomaine.eu">Le Domaine</a></p>
+						<p><a href="https://www.desvignes.org">Le Chat Perché</a></p>
+						<p><a href="https://www.gites-de-france.com/fr/bourgogne-franche-comte/saone-et-loire/beaujolais-loisirs-71g1643">Beaujolais Loisirs</a></p>
+						<p><a href="http://www.legitedangelice.fr">Le Gîte d'Angelice</a></p>
+						<p><a href="https://www.gites-de-france.com/fr/search?destination=La Chapelle-de-Guinchay&towns=63554&travelers=2">D'autres gîtes sur « Gîtes de France »</a></p>
 					</div>
 					<!-- <div class="col-md-4 event__info-item">
 						<h6 class="event__info-header font-weight-bold">Airbnb</h6>
@@ -485,6 +507,7 @@
 					</div> -->
 					<div class="col-md-6 event__info-item">
 						<h6 class="event__info-header font-weight-bold">Autres</h6>
+						<p><a href="https://all.accor.com/hotel/0670/index.fr.shtml?utm_campaign=seo+maps&utm_medium=seo+maps&utm_source=google+Maps#section-room">Hôtel Ibis Mâcon sud</a></p>
 						<p><a href="https://www.airbnb.fr/a/?af=43720035&c=.pi0.pk98415735801_384397821983_c_12026460346&sem_position=&sem_target=aud-655269696475:kwd-12026460346&location_of_interest=&location_physical=9056014&ghost=true&gclid=CjwKCAiA-vLyBRBWEiwAzOkGVO-LR-3J_34R9nj-jSklfYbeeNRGmbtL3EhBTOzGrLeW6Zcqef5PUBoCZmMQAvD_BwE">Airbnb</a></p>
 					</div>
 				</div>
@@ -526,7 +549,7 @@
 							</div>
 							<div class="col-md-6 m-md-0">
 								<div class="form-group">
-									<label class="control-label" for="inputFirstName">Nom(s) et Prénom(s)</label>
+									<label class="control-label" for="inputFirstName">Nom(s) et Prénom(s) des concerné(s)</label>
 									<input type="text" name='firstNames' class="form-control" id="inputFirstName" required>
 								</div>
 								<div class="form-group">

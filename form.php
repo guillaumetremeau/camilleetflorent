@@ -105,7 +105,7 @@ else
         $bodyBottom = "Merci pour votre participation ! Nous vous attendons avec impatience !\r\nPour plus de détails concernant l'événement, consultez le site (camilleetflorent.fr) ou laissez nous un message (mariage.camille.florent@gmail.fr).\r\nBises\r\n\nCamille et Florent";
         if($participation == 'false'){
             $bodyTop = "Bonjour,\r\nNous vous remercions chaleureusement pour votre réponse.";
-            $bodyBottom = "Pour plus de détails concernant l'événement, consultez le site (camilleetflorent.fr) ou laissez nous un message (mariage.camille.florent@gmail.fr).\r\nBises\r\n\nCamille et Florent";
+            $bodyBottom = "Pour plus de détails concernant l'événement, consultez le site (camilleetflorent.fr) ou laissez nous un message (mariage.camille.florent@gmail.com).\r\nBises\r\n\nCamille et Florent";
         }
 
 		// Construction du mail
