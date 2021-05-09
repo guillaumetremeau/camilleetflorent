@@ -20,11 +20,12 @@ Table of Contents:
 */
 
 
-;(function () {
+;
+(function () {
 	'use strict';
 	/* 1. Windows on Load
 	====================*/
-	$(window).on('load', function() {
+	$(window).on('load', function () {
 		//$('.loader').delay(3000).fadeOut('slow');
 		var $grid = $('.grid').masonry({
 			itemSelector: '.grid-item',
@@ -36,7 +37,7 @@ Table of Contents:
 	/* 2. Windows on Scroll
 	====================*/
 	var winScrollTop = 0;
-	$(window).on('scroll', function() {
+	$(window).on('scroll', function () {
 		var nav = $('#navbar');
 		var top = 200;
 		if ($(window).scrollTop() >= top) {
@@ -50,9 +51,12 @@ Table of Contents:
 
 	/* 3. SVG loader
 	====================*/
-	function mycallback(){
+	function mycallback() {
 		this.el.classList.add('finish');
 		setTimeout(showPage, 1500);
+		setTimeout(() => {
+			showSnackBar();
+		}, 2000)
 	}
 	Vivus.prototype.myremoveclass = function () {
 		this.el.classList.remove('finish');
@@ -68,7 +72,7 @@ Table of Contents:
 
 	/* 4. Navbar collapse
 	====================*/
-	$('.navbar-nav>li>a').not('.dropdown-toggle').on('click', function(){
+	$('.navbar-nav>li>a').not('.dropdown-toggle').on('click', function () {
 		$('.navbar-collapse').collapse('hide');
 	});
 
@@ -80,8 +84,8 @@ Table of Contents:
 
 	/* 6. Slider
 	====================*/
-	var slider = function(){
-		if($('.carousel')) {
+	var slider = function () {
+		if ($('.carousel')) {
 			$('.carousel').slick({
 				lazyLoad: 'progressive',
 				centerMode: true,
@@ -107,7 +111,8 @@ Table of Contents:
 							centerMode: true,
 							adaptiveHeight: true
 						}
-					}]
+					}
+				]
 			});
 			$('.carousel').slickLightbox({
 				src: 'src',
@@ -118,7 +123,7 @@ Table of Contents:
 
 	/* 7. Countdown
 	====================*/
-	var countdown = function() {
+	var countdown = function () {
 		var countdown = document.querySelector('.countdown');
 
 		function getTimeRemaining(endtime) {
@@ -148,7 +153,7 @@ Table of Contents:
 				var t = getTimeRemaining(endtime);
 				var daysArr = String(t.days).split('');
 				daysSpan.innerHTML = '';
-				for (var i = 0; i < daysArr.length; i++){
+				for (var i = 0; i < daysArr.length; i++) {
 					newChild = document.createElement('span');
 					newChild.innerHTML = daysArr[i];
 					daysSpan.appendChild(newChild);
@@ -182,8 +187,8 @@ Table of Contents:
 			var timeinterval = setInterval(updateClock, 1000);
 		}
 		// set your wedding date here
-		var deadline = 'September 11 2020 14:00:00 GMT+0100';
-		if (countdown){
+		var deadline = 'August 2 2021 14:00:00 GMT+0100';
+		if (countdown) {
 			initializeClock('timer', deadline);
 		}
 	}
@@ -192,13 +197,14 @@ Table of Contents:
 	====================*/
 	function filledLabels() {
 		var inputFields = $('.control-label').next();
-		inputFields.each(function(){
+		inputFields.each(function () {
 			var singleInput = $(this);
-			singleInput.on('focus blur', function(event){
+			singleInput.on('focus blur', function (event) {
 				checkVal(singleInput);
 			});
 		});
 	}
+
 	function checkVal(inputField) {
 		if (inputField.val() === '') {
 			if (event.type === "focus") {
@@ -207,73 +213,74 @@ Table of Contents:
 				inputField.prev('.control-label').removeClass('filled')
 			}
 		}
-	}/*
-	function submitForm() {
-		var $form = $('#rsvp-form');
-		$form.submit(function (e) {
-			$form.find('.error-msg').remove();
-			$form.find('input').removeClass('error');
-			var formData = {
-				"participation": $form.find('input#participationTrue').prop('checked') | !$form.find('input#participationFalse').prop('checked'),
-				"names": $form.find('input#inputName').val(),
-				"firstName": $form.find('input#inputFirstName').val(),
-				"email": $form.find('input#inputEmail').val(),
-				"countGuest": $form.find('input#inputCountGuest').val(),
-				"comment": $form.find('#inputComment').val()
-			};
-			// formData = JSON.stringify(formData);
-			// console.log(formData);
-			 formData = {
-				"one": "Singular sensation",
-				"two": "Beady little eyes",
-				"three": "Little birds pitch by my doorstep"
-			}; 
-			//formData = JSON.stringify(formData);
-			
-			console.log(formData);
-			formData = JSON.stringify(formData);
-			console.log(formData);
-			//let parsed = JSON.parse(formData);
-			//console.log(parsed);
+	}
+	/*
+		function submitForm() {
+			var $form = $('#rsvp-form');
+			$form.submit(function (e) {
+				$form.find('.error-msg').remove();
+				$form.find('input').removeClass('error');
+				var formData = {
+					"participation": $form.find('input#participationTrue').prop('checked') | !$form.find('input#participationFalse').prop('checked'),
+					"names": $form.find('input#inputName').val(),
+					"firstName": $form.find('input#inputFirstName').val(),
+					"email": $form.find('input#inputEmail').val(),
+					"countGuest": $form.find('input#inputCountGuest').val(),
+					"comment": $form.find('#inputComment').val()
+				};
+				// formData = JSON.stringify(formData);
+				// console.log(formData);
+				 formData = {
+					"one": "Singular sensation",
+					"two": "Beady little eyes",
+					"three": "Little birds pitch by my doorstep"
+				}; 
+				//formData = JSON.stringify(formData);
+				
+				console.log(formData);
+				formData = JSON.stringify(formData);
+				console.log(formData);
+				//let parsed = JSON.parse(formData);
+				//console.log(parsed);
 
-			console.log('try');
-			$.ajax({
-				type: 'post',
-				url: '{"mydate": "123"}',
-				data: formData,
-				dataType: 'json',
-				encode: true,
-				error: function (jqXHR, textStatus, errorThrown) {
-					var test = $.parseJSON(jqXHR.responseText);
-					var test2 = $.parseJSON(test.d);
-					alert(test2[0].Name);
-				}
-			}).done(function(data) {
-				console.log(data.message);
-				if (data.success) {
-					$('.success-msg').html('');
-					$('.success-msg').html(data.message);
-				} else {
-					if (data.errors.names) {
-						$('#inputName').addClass('error').after('<span class="error-msg">'+data.errors.name+'</span>');
-					} else if (data.errors.participation) {
-						$('#participationFalse').addClass('error').after('<span class="error-msg">'+data.errors.participation+'</span>');
-					} else if (data.errors.firstNames) {
-						$('#inputFirstName').addClass('error').after('<span class="error-msg">'+data.errors.firstNames+'</span>');
-					} else if (data.errors.email) {
-						$('#inputEmail').addClass('error').after('<span class="error-msg">'+data.errors.email+'</span>');
-					} else if (data.errors.countGuest) {
-						$('#inputCountGuest').addClass('error').after('<span class="error-msg">'+data.errors.countGuest+'</span>');
-					}				
-				}
+				console.log('try');
+				$.ajax({
+					type: 'post',
+					url: '{"mydate": "123"}',
+					data: formData,
+					dataType: 'json',
+					encode: true,
+					error: function (jqXHR, textStatus, errorThrown) {
+						var test = $.parseJSON(jqXHR.responseText);
+						var test2 = $.parseJSON(test.d);
+						alert(test2[0].Name);
+					}
+				}).done(function(data) {
+					console.log(data.message);
+					if (data.success) {
+						$('.success-msg').html('');
+						$('.success-msg').html(data.message);
+					} else {
+						if (data.errors.names) {
+							$('#inputName').addClass('error').after('<span class="error-msg">'+data.errors.name+'</span>');
+						} else if (data.errors.participation) {
+							$('#participationFalse').addClass('error').after('<span class="error-msg">'+data.errors.participation+'</span>');
+						} else if (data.errors.firstNames) {
+							$('#inputFirstName').addClass('error').after('<span class="error-msg">'+data.errors.firstNames+'</span>');
+						} else if (data.errors.email) {
+							$('#inputEmail').addClass('error').after('<span class="error-msg">'+data.errors.email+'</span>');
+						} else if (data.errors.countGuest) {
+							$('#inputCountGuest').addClass('error').after('<span class="error-msg">'+data.errors.countGuest+'</span>');
+						}				
+					}
+				});
+				e.preventDefault();
 			});
-			e.preventDefault();
-		});
-	};*/
+		};*/
 	/* 9. Page scroll
 	====================*/
-	var pageScroll = function() {
-		$('body').on('click touch', '.page-scroll', function(event) {
+	var pageScroll = function () {
+		$('body').on('click touch', '.page-scroll', function (event) {
 			var $anchor = $(this);
 			$('html, body').stop().animate({
 				scrollTop: $($anchor.attr('href')).offset().top
@@ -283,11 +290,11 @@ Table of Contents:
 	};
 	/* 10. Parallax
 	====================*/
-	$.fn.is_on_screen = function(){
+	$.fn.is_on_screen = function () {
 		var win = $(window);
 		var viewport = {
-			top : win.scrollTop(),
-			left : win.scrollLeft()
+			top: win.scrollTop(),
+			left: win.scrollLeft()
 		};
 		//viewport.right = viewport.left + win.width();
 		viewport.bottom = viewport.top + win.height();
@@ -298,22 +305,38 @@ Table of Contents:
 
 		return (!(viewport.bottom < bounds.top || viewport.top > bounds.bottom));
 	};
+
 	function parallax() {
 		var scrolled = $(window).scrollTop();
-		$('.parallax').each(function(){
+		$('.parallax').each(function () {
 
-		if ($(this).is_on_screen()) {
-			var firstTop = $(this).offset().top;
-				var moveTop = (firstTop-winScrollTop)*0.2 //speed;
-				$(this).css("transform","translateY("+moveTop+"px)");
+			if ($(this).is_on_screen()) {
+				var firstTop = $(this).offset().top;
+				var moveTop = (firstTop - winScrollTop) * 0.2 //speed;
+				$(this).css("transform", "translateY(" + moveTop + "px)");
 			}
 		});
 	}
 
-	$(function(){
+	$(function () {
 		slider();
 		countdown();
 		filledLabels();
 		pageScroll();
 	});
+
+	// Snackbar
+	function showSnackBar() {
+		// Get the snackbar DIV
+		var x = document.getElementById("snackbar");
+
+		// Add the "show" class to DIV
+		x.className = "show";
+
+		// After 3 seconds, remove the show class from DIV
+		setTimeout(function () {
+			x.className = x.className.replace("show", "");
+		}, 10000);
+	}
+
 }());
